@@ -1,0 +1,65 @@
+{
+	"name": "@three-ws/home-bridge",
+	"version": "0.1.0",
+	"description": "Connect a three.ws agent to a real Home Assistant instance: live entity state, safe service calls, a room graph for the 3D scene, and the optional Model Context Protocol capability channel.",
+	"keywords": [
+		"home-assistant",
+		"smart-home",
+		"iot",
+		"agent",
+		"mcp",
+		"model-context-protocol",
+		"voice",
+		"3d",
+		"three.ws",
+		"ai-agents"
+	],
+	"author": "three.ws <support@three.ws> (https://three.ws)",
+	"license": "Apache-2.0",
+	"homepage": "https://nirholas.github.io/home-bridge/",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nirholas/home-bridge.git"
+	},
+	"type": "module",
+	"main": "./src/index.js",
+	"module": "./src/index.js",
+	"exports": {
+		".": "./src/index.js",
+		"./url": "./src/url.js",
+		"./errors": "./src/errors.js"
+	},
+	"files": [
+		"src",
+		"README.md",
+		"LICENSE"
+	],
+	"scripts": {
+		"test": "vitest run --root ../.. packages/home-bridge/tests"
+	},
+	"dependencies": {
+		"@leeoniya/ufuzzy": "^1.0.19",
+		"home-assistant-js-websocket": "^9.6.0"
+	},
+	"peerDependencies": {
+		"@modelcontextprotocol/sdk": "^1.29.0",
+		"ws": "^8.21.0"
+	},
+	"peerDependenciesMeta": {
+		"@modelcontextprotocol/sdk": {
+			"optional": true
+		},
+		"ws": {
+			"optional": true
+		}
+	},
+	"engines": {
+		"node": ">=20"
+	},
+	"bugs": {
+		"url": "https://github.com/nirholas/home-bridge/issues"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}

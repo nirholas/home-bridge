@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>@three-ws/home-bridge: Connect a three.ws agent to a real Home Assistant instance</title>
+<meta name="description" content="Connect a three.ws agent to a real Home Assistant instance: live entity state, safe service calls, a room graph for the 3D scene, and the optional Model Context Protocol capability channel.">
+<link rel="canonical" href="https://nirholas.github.io/home-bridge/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="three.ws">
+<meta property="og:title" content="@three-ws/home-bridge">
+<meta property="og:description" content="Connect a three.ws agent to a real Home Assistant instance: live entity state, safe service calls, a room graph for the 3D scene, and the optional Model Context Protocol capability channel.">
+<meta property="og:url" content="https://nirholas.github.io/home-bridge/">
+<meta property="og:image" content="https://nirholas.github.io/home-bridge/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="@three-ws/home-bridge">
+<meta name="twitter:description" content="Connect a three.ws agent to a real Home Assistant instance: live entity state, safe service calls, a room graph for the 3D scene, and the optional Model Context Protocol capability channel.">
+<meta name="twitter:image" content="https://nirholas.github.io/home-bridge/og.png">
+<meta name="keywords" content="home-assistant, smart-home, iot, agent, mcp, model-context-protocol, voice, 3d, three.ws, ai-agents">
+<link rel="alternate" type="text/plain" href="llms.txt" title="llms.txt">
+<link rel="icon" href="https://three.ws/three-ws-mcp-icon.svg" type="image/svg+xml">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"@three-ws/home-bridge","description":"Connect a three.ws agent to a real Home Assistant instance: live entity state, safe service calls, a room graph for the 3D scene, and the optional Model Context Protocol capability channel.","codeRepository":"https://github.com/nirholas/home-bridge","programmingLanguage":"JavaScript","license":"https://spdx.org/licenses/Apache-2.0.html","version":"0.1.0","url":"https://nirholas.github.io/home-bridge/","author":{"@type":"Organization","name":"three.ws","url":"https://three.ws"},"keywords":"home-assistant, smart-home, iot, agent, mcp, model-context-protocol, voice, 3d, three.ws, ai-agents"}</script>
+<style>:root{--bg:#fff;--fg:#111418;--mut:#586069;--line:#e3e6ea;--acc:#2563eb;--code:#f4f6f8;--card:#fafbfc}
+@media(prefers-color-scheme:dark){:root{--bg:#0b0d10;--fg:#e8eaed;--mut:#9aa3ad;--line:#232830;--acc:#6ea0ff;--code:#14181d;--card:#10141a}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:focus-visible,button:focus-visible{outline:2px solid var(--acc);outline-offset:2px;border-radius:4px}
+header.bar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:1100px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{font-weight:700;text-decoration:none;color:var(--fg)}
+.bar nav{margin-left:auto;display:flex;gap:16px;font-size:14px}
+.bar nav a{color:var(--mut);text-decoration:none;transition:color .15s}.bar nav a:hover{color:var(--fg)}
+.hero{max-width:1100px;margin:0 auto;padding:48px 16px 24px}
+.hero h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 12px;letter-spacing:-.02em}
+.hero p{color:var(--mut);max-width:70ch;font-size:18px;margin:0 0 24px}
+.install{display:flex;align-items:center;gap:8px;max-width:620px;background:var(--code);border:1px solid var(--line);border-radius:10px;padding:6px 6px 6px 14px}
+.install code{flex:1;overflow-x:auto;white-space:nowrap;font:14px ui-monospace,SFMono-Regular,Menlo,monospace}
+.install button{border:0;background:var(--acc);color:#fff;border-radius:7px;padding:8px 14px;font:600 13px system-ui;cursor:pointer;transition:transform .12s,opacity .12s}
+.install button:hover{opacity:.9}.install button:active{transform:scale(.96)}
+.cta{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.cta a{padding:9px 16px;border:1px solid var(--line);border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;color:var(--fg);transition:border-color .15s,transform .15s}
+.cta a:hover{border-color:var(--acc);transform:translateY(-1px)}.cta a.pri{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.layout{max-width:1100px;margin:0 auto;padding:8px 16px 64px;display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:40px}
+@media(max-width:860px){.layout{grid-template-columns:minmax(0,1fr)}.toc{display:none}}
+.toc{position:sticky;top:76px;align-self:start;font-size:14px;border-left:1px solid var(--line);padding-left:16px}
+.toc p{margin:0 0 8px;font-weight:700;color:var(--mut);text-transform:uppercase;font-size:12px;letter-spacing:.06em}
+.toc ul{list-style:none;margin:0;padding:0}.toc li{margin:6px 0}.toc a{color:var(--mut);text-decoration:none}.toc a:hover{color:var(--fg)}
+main{min-width:0;overflow-wrap:anywhere}main pre code{overflow-wrap:normal}main img{max-width:100%;height:auto}
+main h2{margin-top:2.2em;padding-bottom:.3em;border-bottom:1px solid var(--line)}
+.anchor{margin-left:-1.1em;padding-right:.4em;text-decoration:none;opacity:0;color:var(--mut)}h2:hover .anchor,h3:hover .anchor,h4:hover .anchor{opacity:1}
+pre{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow-x:auto;font-size:14px;line-height:1.5}
+code{font:0.9em ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--code);padding:.15em .35em;border-radius:5px}pre code{background:none;padding:0}
+table{border-collapse:collapse;display:block;overflow-x:auto;max-width:100%}th,td{border:1px solid var(--line);padding:8px 12px;text-align:left}th{background:var(--card)}
+blockquote{margin:1em 0;padding:.2em 1em;border-left:4px solid var(--line);color:var(--mut)}
+footer{border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+.foot-in{max-width:1100px;margin:0 auto;padding:24px 16px;display:flex;gap:16px;flex-wrap:wrap}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}</style>
+</head>
+<body>
+<header class="bar"><div class="bar-in">
+<a class="brand" href="https://nirholas.github.io/home-bridge/">@three-ws/home-bridge</a>
+<nav aria-label="Project links"><a href="https://github.com/nirholas/home-bridge">GitHub</a><a href="https://www.npmjs.com/package/@three-ws/home-bridge">npm</a><a href="llms.txt">llms.txt</a><a href="https://three.ws">three.ws</a></nav>
+</div></header>
+<section class="hero">
+<h1>@three-ws/home-bridge</h1>
+<p>Connect a three.ws agent to a real Home Assistant instance: live entity state, safe service calls, a room graph for the 3D scene, and the optional Model Context Protocol capability channel.</p>
+<div class="install" role="group" aria-label="Install command"><code>npm install @three-ws/home-bridge</code><button type="button" data-copy="npm install @three-ws/home-bridge">Copy</button></div>
+<div class="cta"><a class="pri" href="https://github.com/nirholas/home-bridge">View on GitHub</a><a href="https://github.com/nirholas/home-bridge/stargazers">Star the repo</a></div>
+</section>
+<div class="layout">
+<main id="content"><h1>@three-ws/home-bridge</h1>
+<p><strong>Connect a three.ws agent to a real home.</strong></p>
+<p>This is the layer between a three.ws agent and <a href="https://www.home-assistant.io">Home Assistant</a>:
+live entity state, safe service calls, a room graph the 3D scene can render, and the optional
+Model Context Protocol channel.</p>
+<p>It deliberately implements <strong>no device support at all</strong>. Zigbee, Z-Wave, Matter, Thread, BLE,
+and the long tail of 1,500 integrations are Home Assistant&#39;s job, and it does that job better
+than anything we would write. This package is the 200 lines in the middle that were missing.</p>
+<p>Why this exists, what else was evaluated, and where it goes next:
+<a href="https://github.com/nirholas/home-bridge/blob/main/./../docs/smart-home.md">docs/smart-home.md</a>.</p>
+<p><strong>Pre-1.0.</strong> An agent reaching a real building is new enough that the shape is not settled, and
+the export surface will move before 1.0. Pin an exact version if you are building on it. The one
+thing that will not move is the gate: reads free, safety moves unprompted, and anything that opens
+the house stops and asks.</p>
+<h2 id="install"><a class="anchor" href="#install" aria-label="Link to this section">#</a>Install</h2>
+<pre><code class="language-bash">npm install @three-ws/home-bridge
+</code></pre>
+<p>The Model Context Protocol channel is optional. Install <code>@modelcontextprotocol/sdk</code> alongside
+this package if you want it; everything else works without it.</p>
+<h2 id="what-you-need-from-the-user"><a class="anchor" href="#what-you-need-from-the-user" aria-label="Link to this section">#</a>What you need from the user</h2>
+<p>A <strong>base URL</strong> and a <strong>long-lived access token</strong> (Home Assistant, Profile, Security,
+Long-lived access tokens, Create token).</p>
+<p>The URL has to be one your code can actually reach. A page served over https cannot open a
+plain-http LAN address, and a cloud server cannot route to <code>192.168.x.x</code> at all, so a home
+that is only on its own network needs a remote https URL (Home Assistant Cloud, or the
+user&#39;s own reverse proxy). <code>normalizeBaseUrl</code> and <code>isPrivateHost</code> let you say that up front
+instead of after a timeout.</p>
+<h2 id="which-home-assistant-versions-this-works-against"><a class="anchor" href="#which-home-assistant-versions-this-works-against" aria-label="Link to this section">#</a>Which Home Assistant versions this works against</h2>
+<p><strong>2025.10 and newer.</strong> Measured, not assumed: <code>npm run home:matrix</code> in the three.ws repo
+(<code>scripts/home-version-matrix.mjs</code>) boots a real container per release and runs this library
+against it, filling in a table of connect, registries, state stream, service call, scenes and
+<code>mcp_server</code>. The full table and the date it was measured are in
+<a href="https://github.com/nirholas/three.ws/blob/main/docs/smart-home.md">docs/smart-home.md</a>.</p>
+<p>The release set is derived from Home Assistant&#39;s own install-share analytics rather than
+hardcoded: the current stable, the two before it, and the oldest release still above one percent
+of installs. The floor is where the world has moved on, not where this library breaks, and it
+moves on its own as people upgrade. Nothing was found that a 2025.10 house cannot do.</p>
+<p>Where releases differ, this library <strong>asks the instance</strong> rather than parsing its version string.
+The <code>mcp_server</code> probe is the pattern: an instance either answers <code>/api/mcp</code> with tools or it does
+not, and either answer is a fact rather than an inference from a number.</p>
+<h2 id="use-it"><a class="anchor" href="#use-it" aria-label="Link to this section">#</a>Use it</h2>
+<pre><code class="language-js">import { HomeBridge } from &#39;@three-ws/home-bridge&#39;;
+
+const home = new HomeBridge({
+	baseUrl: &#39;https://abc123.ui.nabu.casa&#39;,
+	token: process.env.HOME_ASSISTANT_TOKEN,
+});
+
+// connect() opens the state socket, reads the floor/area/device/entity
+// registries, and resolves once the room graph is ready.
+const graph = await home.connect();
+
+for (const room of graph.rooms) {
+	console.log(room.name, room.lighting, room.climate, room.secured);
+}
+// Bedroom  { total: 1, on: 1, brightness: 0.157, rgb: [255,164,82] }  null  null
+// Living Room  { total: 2, on: 2, ... }  { temperature: 23, sources: 1 }  { locks: 1, unlocked: [], openings: 1, open: [&#39;cover.living_room_window&#39;], secure: false }
+
+// The graph rebuilds itself on every state push, so a 3D scene can just redraw.
+home.on(&#39;graph&#39;, (next) =&gt; scene.apply(next));
+
+await home.call(&#39;light&#39;, &#39;turn_on&#39;, { entity_id: &#39;light.kitchen_lights&#39;, brightness_pct: 40 });
+
+home.close();
+</code></pre>
+<h3 id="good-night-is-a-scene-the-user-already-built"><a class="anchor" href="#good-night-is-a-scene-the-user-already-built" aria-label="Link to this section">#</a>&quot;Good night&quot; is a scene the user already built</h3>
+<p>Household macros are not something this package invents. They are <code>scene.*</code> and <code>script.*</code>
+entities the user made in an editor they already know, and their own &quot;Bedtime&quot; scene knows
+about the plant light and the fish tank in a way no amount of reasoning over an entity list
+will. <code>activate()</code> finds it:</p>
+<pre><code class="language-js">const { ran, match } = await home.activate(&#39;good night&#39;);
+// match: { entityId: &#39;scene.bedtime&#39;, macro: &#39;good_night&#39;, confidence: 0.95,
+//   reason: &#39;&quot;good night&quot; is the Good night macro, and Bedtime is this home\&#39;s version of it.&#39; }
+</code></pre>
+<p>Phrases resolve through a synonym table (<code>good night</code>, <code>goodnight</code>, <code>bedtime</code>, <code>time for bed</code>
+all reach the same place) and then through fuzzy matching on the scene names. A house with no
+matching scene returns <code>{ ran: false, match: null }</code> rather than firing the closest thing it
+can find. Pass <code>{ dryRun: true }</code> to resolve without running.</p>
+<h3 id="rooms-the-house-does-not-have-yet"><a class="anchor" href="#rooms-the-house-does-not-have-yet" aria-label="Link to this section">#</a>Rooms the house does not have yet</h3>
+<p>Most real Home Assistant setups have devices everywhere and not one area, so there is nothing to
+draw a room from. Make one and file devices into it, in the user&#39;s own registry:</p>
+<pre><code class="language-js">const area = await bridge.createArea(&#39;Kitchen&#39;);       // { id: &#39;kitchen&#39;, created: true }
+await bridge.assignEntityArea(&#39;light.bed_light&#39;, area.id);
+bridge.graph.rooms.find((r) =&gt; r.id === area.id);      // already carries the light
+</code></pre>
+<p>Both write the user&#39;s own Home Assistant, so the room reaches their dashboards, their voice
+assistant and their automations too. Neither is a guarded action: nothing moves and nothing
+opens, and both are reversible in two clicks in their own UI. <code>createArea</code> with a name that
+already exists returns that area with <code>created: false</code> rather than failing, because the room the
+caller asked for is there either way.</p>
+<h2 id="the-physical-action-gate"><a class="anchor" href="#the-physical-action-gate" aria-label="Link to this section">#</a>The physical-action gate</h2>
+<p><strong>Reads are free. Writes that open the house stop and ask.</strong> The rule is asymmetric on
+purpose: locking up, closing the garage, and arming the alarm move the house toward safety and
+never prompt; unlocking, opening, and disarming always do.</p>
+<pre><code class="language-js">try {
+	await home.call(&#39;lock&#39;, &#39;unlock&#39;, { entity_id: &#39;lock.front_door&#39; });
+} catch (err) {
+	if (err.code === &#39;needs_confirmation&#39;) {
+		// err.pending: { domain, service, data, risk: &#39;security&#39;, entityId }
+		// Show the user what is about to happen, then repeat with the flag.
+		await home.call(&#39;lock&#39;, &#39;unlock&#39;, { entity_id: &#39;lock.front_door&#39; }, { confirmed: true });
+	}
+}
+</code></pre>
+<p><code>confirmed: true</code> represents a human saying yes. Never set it from model output.</p>
+<p>A standing allowance is per entity and per direction, never per domain: a user who lets the
+agent open the office door has not let it open the front door.</p>
+<pre><code class="language-js">home.allowList.add(&#39;lock.office_door&#39;);
+</code></pre>
+<h2 id="the-mcp-channel"><a class="anchor" href="#the-mcp-channel" aria-label="Link to this section">#</a>The MCP channel</h2>
+<p>Home Assistant&#39;s first-party <a href="https://www.home-assistant.io/integrations/mcp_server/"><code>mcp_server</code></a>
+integration exposes the exact tools the user chose to give their own LLM. When a home has it
+enabled, an agent gets that curated surface for free.</p>
+<pre><code class="language-js">import { connectHomeMcp, flattenEntities } from &#39;@three-ws/home-bridge&#39;;
+
+const mcp = await connectHomeMcp({
+	baseUrl,
+	token,
+	entities: () =&gt; flattenEntities(home.graph),
+	isAllowed: (id) =&gt; home.allowList.has(id),
+});
+
+console.log(mcp.tools.map((t) =&gt; t.name));
+// intent__HassTurnOn, intent__HassTurnOff, light__HassLightSet, climate__HassClimateSetTemperature, ...
+
+await mcp.callTool({ name: &#39;light__HassLightSet&#39;, arguments: { name: &#39;Kitchen Lights&#39;, brightness: 30 } });
+</code></pre>
+<p><strong>Pass <code>entities</code> or the gate is off, and you need the gate here more than anywhere else.</strong>
+Home Assistant&#39;s own description of <code>intent__HassTurnOff</code> reads: <em>&quot;Turns off/closes a device
+or entity. For locks, this performs an &#39;unlock&#39; action.&quot;</em> A model told to turn something off
+can unlock a front door, and nothing in the tool name says so. <code>classifyMcpCall</code> resolves the
+call&#39;s targets against the live entity list, works out the service each one would really
+perform, and applies the same rule the WebSocket path uses. This is verified against a live
+instance in <code>tests/live-home.test.js</code>.</p>
+<p>An instance without the integration set up throws <code>ERR.NO_MCP</code>, which is an ordinary state to
+be in and not an outage. The WebSocket channel works on every instance with nothing but a
+token, so the MCP channel is always an upgrade and never a requirement.</p>
+<h2 id="a-house-you-cannot-dial-into"><a class="anchor" href="#a-house-you-cannot-dial-into" aria-label="Link to this section">#</a>A house you cannot dial into</h2>
+<p>Most Home Assistant installs answer only on their own network, and no remote https URL exists for
+them. For those, the house dials out: the three.ws integration inside it opens one outbound
+WebSocket to a relay, and this package reaches the instance back down that socket.</p>
+<p>Above this line nothing changes. The room graph, the gate, intent resolution and every error code
+are identical, because <code>HomeBridge</code> takes a transport where it would otherwise take a token:</p>
+<pre><code class="language-js">import { HomeBridge, createRelayTransport } from &#39;@three-ws/home-bridge&#39;;
+
+const home = new HomeBridge({
+	transport: createRelayTransport({
+		relayUrl: &#39;wss://home-relay.three.ws&#39;,
+		relayId,
+		serviceToken,
+	}),
+});
+console.log(home.transport); // &quot;relay&quot;
+console.log(home.baseUrl);   // &quot;wss://home-relay.three.ws/v1/bridge?relay_id=abc123&quot;
+await home.connect();
+</code></pre>
+<p>No <code>baseUrl</code> and no <code>token</code>: a transport replaces both. It carries <strong>no Home Assistant
+credential</strong> at all, because the integration authenticates locally, inside the house, and hands
+the session over already authenticated, so no long-lived token ever leaves the building.</p>
+<p>The two halves of that socket are <a href="https://github.com/nirholas/home-bridge/blob/main/./../services/home-relay"><code>services/home-relay</code></a> (the
+terminator) and <a href="https://github.com/nirholas/home-bridge/blob/main/./../home-assistant-integration"><code>home-assistant-integration/</code></a> (the piece that
+installs in the house and dials out).</p>
+<h2 id="errors"><a class="anchor" href="#errors" aria-label="Link to this section">#</a>Errors</h2>
+<p>Every failure carries a <code>code</code>, because a connect screen has to tell &quot;your token is wrong&quot;
+apart from &quot;your house is offline&quot;.</p>
+<table>
+<thead>
+<tr>
+<th><code>code</code></th>
+<th>Means</th>
+<th>What to tell the user</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>bad_url</code></td>
+<td>Not a URL, or plain http from an https page</td>
+<td>Use your remote https URL</td>
+</tr>
+<tr>
+<td><code>auth</code></td>
+<td>Home Assistant rejected the token</td>
+<td>Create a new long-lived token</td>
+</tr>
+<tr>
+<td><code>unreachable</code></td>
+<td>No answer at all</td>
+<td>The home may be LAN-only</td>
+</tr>
+<tr>
+<td><code>needs_confirmation</code></td>
+<td>A guarded action, no explicit yes</td>
+<td>Show <code>err.pending</code>, then confirm</td>
+</tr>
+<tr>
+<td><code>no_mcp</code></td>
+<td><code>mcp_server</code> is not enabled</td>
+<td>Optional: offer to add it</td>
+</tr>
+<tr>
+<td><code>call_failed</code></td>
+<td>Connected, request failed</td>
+<td>Surface the message</td>
+</tr>
+<tr>
+<td><code>not_connected</code></td>
+<td>Used before <code>connect()</code></td>
+<td>A bug in the caller</td>
+</tr>
+</tbody></table>
+<h2 id="api"><a class="anchor" href="#api" aria-label="Link to this section">#</a>API</h2>
+<table>
+<thead>
+<tr>
+<th>Export</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>HomeBridge</code></td>
+<td>One live connection: <code>connect</code>, <code>call</code>, <code>activate</code>, <code>macros</code>, <code>graph</code>, <code>states</code>, <code>on</code>, <code>close</code></td>
+</tr>
+<tr>
+<td><code>HomeBridge</code> room organisation</td>
+<td><code>areas</code>, <code>createArea</code>, <code>assignEntityArea</code>, <code>refreshRegistries</code>: read the rooms, make one, and file a device into it, in the user&#39;s own registry</td>
+</tr>
+<tr>
+<td><code>connectHomeMcp</code></td>
+<td>The optional MCP capability channel, gated</td>
+</tr>
+<tr>
+<td><code>buildHomeGraph</code></td>
+<td>Registries plus states to the room graph. Pure</td>
+</tr>
+<tr>
+<td><code>flattenEntities</code></td>
+<td>The room graph to one flat entity list</td>
+</tr>
+<tr>
+<td><code>summarizeLighting</code> / <code>summarizeClimate</code> / <code>summarizeSecurity</code></td>
+<td>Per-room rollups the 3D scene reads</td>
+</tr>
+<tr>
+<td><code>resolveIntent</code> / <code>matchMacro</code> / <code>MACROS</code></td>
+<td>Phrase to an existing scene or script</td>
+</tr>
+<tr>
+<td><code>classifyCall</code> / <code>classifyMcpCall</code> / <code>createAllowList</code></td>
+<td>The physical-action gate</td>
+</tr>
+<tr>
+<td><code>createRelayTransport</code> / <code>relayCloseError</code> / <code>RELAY_PROTOCOL_VERSION</code></td>
+<td>Reach a house that dialled out to a relay instead of one you dial into. See below</td>
+</tr>
+<tr>
+<td><code>normalizeBaseUrl</code> / <code>isPrivateHost</code></td>
+<td>URL handling and the LAN reachability check</td>
+</tr>
+</tbody></table>
+<h2 id="tests"><a class="anchor" href="#tests" aria-label="Link to this section">#</a>Tests</h2>
+<pre><code class="language-bash">npx vitest run packages/home-bridge
+</code></pre>
+<p>The default suite runs against <code>tests/fixtures/home.json</code>, a recording of a real Home
+Assistant instance rather than hand-written shapes (regenerate it with
+<code>scripts/capture-home-fixture.mjs</code>). Set <code>HOME_ASSISTANT_URL</code> and <code>HOME_ASSISTANT_TOKEN</code> to
+also run the live suite, which changes real state on a real instance. A throwaway house,
+onboarded and seeded, is one command:</p>
+<pre><code class="language-bash">node scripts/home-test-instance.mjs --up --onboard --seed --json
+# {&quot;ok&quot;:true,&quot;baseUrl&quot;:&quot;http://127.0.0.1:42125&quot;,&quot;token&quot;:&quot;eyJhbGciOi...&quot;,&quot;seeded&quot;:true, ...}
+
+HOME_ASSISTANT_URL=http://127.0.0.1:42125 HOME_ASSISTANT_TOKEN=... npx vitest run packages/home-bridge
+node scripts/home-test-instance.mjs --down
+</code></pre>
+<h2 id="a-flapping-house-cannot-kill-your-process"><a class="anchor" href="#a-flapping-house-cannot-kill-your-process" aria-label="Link to this section">#</a>A flapping house cannot kill your process</h2>
+<p><code>connect()</code> installs <code>guardSubscriptions</code> on the connection it opens, and that is not
+belt and braces. <code>home-assistant-js-websocket</code> re-establishes its subscriptions after a
+reconnect with no rejection handler on the promise, so a house whose uplink flaps can
+drop the socket again with a resubscribe command in flight, and the rejection reaches
+Node unobserved. Under Node&#39;s default <code>--unhandled-rejections=throw</code> that <strong>terminates
+the process</strong>, which on a server holding one connection per house means one bad uplink
+takes every other house down with it.</p>
+<p>Reproduced against a real Home Assistant, at the fifth flap, by scenario 2 of
+<a href="https://github.com/nirholas/home-bridge/blob/main/./../scripts/home-chaos.mjs"><code>scripts/home-chaos.mjs</code></a>. The bug and the fix we would
+like to see are written up in
+<a href="https://github.com/nirholas/home-bridge/blob/main/./../docs/upstream/home-assistant-js-websocket-resubscribe-rejection.md">docs/upstream/home-assistant-js-websocket-resubscribe-rejection.md</a>.
+Until that lands, a failed subscribe here is reported on the bridge&#39;s <code>error</code> event and
+resolves to a no-op unsubscribe, so the library retries it on the next <code>ready</code> and the
+process survives.</p>
+<h2 id="read-next"><a class="anchor" href="#read-next" aria-label="Link to this section">#</a>Read next</h2>
+<ul>
+<li><a href="https://github.com/nirholas/home-bridge/blob/main/./../docs/tutorials/connect-your-home.md">docs/tutorials/connect-your-home.md</a>: zero to a
+working agent in a real house, by text and by voice.</li>
+<li><a href="https://github.com/nirholas/home-bridge/blob/main/./home-mcp"><code>@three-ws/home-mcp</code></a>: this library packaged as an MCP server, so any assistant
+can run a house without you writing a client.</li>
+<li><a href="https://github.com/nirholas/home-bridge/blob/main/./../docs/smart-home.md">docs/smart-home.md</a>: why Home Assistant owns the device layer, what
+else was evaluated, and where this goes next.</li>
+</ul>
+<h2 id="license"><a class="anchor" href="#license" aria-label="Link to this section">#</a>License</h2>
+<p>Apache-2.0. Built on <a href="https://github.com/home-assistant/home-assistant-js-websocket"><code>home-assistant-js-websocket</code></a>
+(Apache-2.0) and <a href="https://github.com/leeoniya/uFuzzy"><code>@leeoniya/ufuzzy</code></a> (MIT).</p>
+</main>
+<nav class="toc" aria-label="On this page"><p>On this page</p><ul><li><a href="#install">Install</a></li><li><a href="#what-you-need-from-the-user">What you need from the user</a></li><li><a href="#which-home-assistant-versions-this-works-against">Which Home Assistant versions this works against</a></li><li><a href="#use-it">Use it</a></li><li><a href="#the-physical-action-gate">The physical-action gate</a></li><li><a href="#the-mcp-channel">The MCP channel</a></li><li><a href="#a-house-you-cannot-dial-into">A house you cannot dial into</a></li><li><a href="#errors">Errors</a></li><li><a href="#api">API</a></li><li><a href="#tests">Tests</a></li><li><a href="#a-flapping-house-cannot-kill-your-process">A flapping house cannot kill your process</a></li><li><a href="#read-next">Read next</a></li><li><a href="#license">License</a></li></ul></nav>
+</div>
+<footer><div class="foot-in"><span>Apache-2.0 licensed</span><a href="https://github.com/nirholas/home-bridge/issues">Issues</a><a href="https://github.com/nirholas/home-bridge/blob/main/CONTRIBUTING.md">Contributing</a><a href="https://github.com/nirholas/home-bridge/security/policy">Security</a><a href="https://three.ws">Part of three.ws</a></div></footer>
+<script>document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){
+var t=b.getAttribute('data-copy');var done=function(){var o=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=o},1400)};
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){})}
+else{var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');done()}catch(e){}a.remove()}})});</script>
+</body>
+</html>

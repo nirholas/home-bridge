@@ -1,0 +1,1464 @@
+{
+	"_source": {
+		"description": "Recorded from a real Home Assistant running the demo integration. Not hand-written: regenerate with `node scripts/capture-home-fixture.mjs`, which builds its own instance through scripts/home-test-instance.mjs.",
+		"haVersion": "2026.9.0",
+		"capturedAt": "2026-09-09",
+		"counts": {
+			"floors": 1,
+			"areas": 4,
+			"scenes": 2
+		}
+	},
+	"floors": [
+		{
+			"floor_id": "ground_floor",
+			"name": "Ground Floor",
+			"level": 0,
+			"icon": null
+		}
+	],
+	"areas": [
+		{
+			"area_id": "living_room",
+			"name": "Living Room",
+			"icon": "mdi:sofa",
+			"floor_id": "ground_floor",
+			"aliases": []
+		},
+		{
+			"area_id": "kitchen",
+			"name": "Kitchen",
+			"icon": "mdi:stove",
+			"floor_id": "ground_floor",
+			"aliases": []
+		},
+		{
+			"area_id": "bedroom",
+			"name": "Bedroom",
+			"icon": "mdi:bed",
+			"floor_id": "ground_floor",
+			"aliases": []
+		},
+		{
+			"area_id": "front_door",
+			"name": "Front Door",
+			"icon": null,
+			"floor_id": "ground_floor",
+			"aliases": []
+		}
+	],
+	"devices": [
+		{
+			"id": "56adc53135488788c3c8c209ea67b925",
+			"area_id": null,
+			"name": "Sun"
+		},
+		{
+			"id": "1a0fa5dd2e5d56eacdb02175798606d3",
+			"area_id": null,
+			"name": "Basement Floor Wet"
+		},
+		{
+			"id": "9e4f8ac20caee2a632ac9b5ed5067287",
+			"area_id": null,
+			"name": "Movement Backyard"
+		},
+		{
+			"id": "9c3040e9e46d44ea05d9685c8ea11b1f",
+			"area_id": null,
+			"name": "Outside Temperature"
+		},
+		{
+			"id": "cb60670876539454b0657c1e9172fbec",
+			"area_id": null,
+			"name": "Push"
+		},
+		{
+			"id": "0eeda399ea402ade26b45746e1b94cec",
+			"area_id": null,
+			"name": "HeatPump"
+		},
+		{
+			"id": "d58ef93343ad12e376ad70dfb9fc086c",
+			"area_id": null,
+			"name": "Hvac"
+		},
+		{
+			"id": "050c87a2198c9f673bb072a9fbe0b0da",
+			"area_id": null,
+			"name": "Ecobee"
+		},
+		{
+			"id": "d8e01588a7cf3545cbffbed1d23291a8",
+			"area_id": null,
+			"name": "Kitchen Window"
+		},
+		{
+			"id": "0b58bbf8dc60724486973cdc0148c01c",
+			"area_id": null,
+			"name": "Hall Window"
+		},
+		{
+			"id": "c315f987169ebbc8a12f3da65482be8f",
+			"area_id": null,
+			"name": "Living Room Window"
+		},
+		{
+			"id": "96517d28b74d3e3ee4d77ea1e4111040",
+			"area_id": null,
+			"name": "Garage Door"
+		},
+		{
+			"id": "4d51867d262d517bca4cf232c412dd50",
+			"area_id": null,
+			"name": "Pergola Roof"
+		},
+		{
+			"id": "cc8d55d56e509b7279887ddd16ba9c7d",
+			"area_id": null,
+			"name": "Date"
+		},
+		{
+			"id": "de3f410cf7c20ac8ec0012d451201f89",
+			"area_id": null,
+			"name": "Date and Time"
+		},
+		{
+			"id": "99c96f383a5d97964320def1dcca33bc",
+			"area_id": null,
+			"name": "Bed Light"
+		},
+		{
+			"id": "7503b224826d4f8e3cfcc7d239d2e119",
+			"area_id": null,
+			"name": "Ceiling Lights"
+		},
+		{
+			"id": "96225237f1d35a76f53e487db62339ec",
+			"area_id": null,
+			"name": "Kitchen Lights"
+		},
+		{
+			"id": "ead77abba06af18fb62256fb71ab895f",
+			"area_id": null,
+			"name": "Office RGBW Lights"
+		},
+		{
+			"id": "b89d5308f4ccc3677f24c95f97615c9c",
+			"area_id": null,
+			"name": "Living Room RGBWW Lights"
+		},
+		{
+			"id": "f16deeb133aacb0decbcd8c6a7d3e46a",
+			"area_id": null,
+			"name": "Entrance Color + White Lights"
+		},
+		{
+			"id": "8f5387b6638d880766d952be19b0b4da",
+			"area_id": null,
+			"name": "Notifier"
+		},
+		{
+			"id": "e9a458594cb4819648fe1388ec134a27",
+			"area_id": null,
+			"name": "volume"
+		},
+		{
+			"id": "81cc962981e99e100fdb8473c7c5bb85",
+			"area_id": null,
+			"name": "PWM 1"
+		},
+		{
+			"id": "509cbe4b21fbe422cb34adcd189c6cde",
+			"area_id": null,
+			"name": "Large Range"
+		},
+		{
+			"id": "7f8956826967dac9baa479c9c092eeb2",
+			"area_id": null,
+			"name": "Small Range"
+		},
+		{
+			"id": "f427242ff254c62f158c0512f999df2e",
+			"area_id": null,
+			"name": "Temperature setting"
+		},
+		{
+			"id": "ff79c39214b3694a7d306433960aa027",
+			"area_id": null,
+			"name": "Speed"
+		},
+		{
+			"id": "be01e087c464b9cea70357d640d5c4b3",
+			"area_id": null,
+			"name": "Outside Humidity"
+		},
+		{
+			"id": "cba0b96cf1ed272686072488f25282c2",
+			"area_id": null,
+			"name": "Carbon monoxide"
+		},
+		{
+			"id": "a8e5e6a6be13d158ce26a4c2e75822c9",
+			"area_id": null,
+			"name": "Carbon dioxide"
+		},
+		{
+			"id": "0dc7e4c3862265c581f878665ba0a3a8",
+			"area_id": null,
+			"name": "Power consumption"
+		},
+		{
+			"id": "5be3e460bdccc6b0e113690a483b3ab3",
+			"area_id": null,
+			"name": "Total energy 1"
+		},
+		{
+			"id": "07ef9d768f15070e6715f2dc5fb12a14",
+			"area_id": null,
+			"name": "Total energy 2"
+		},
+		{
+			"id": "41f33521291b9f8f1aaf69d91ae0eee2",
+			"area_id": null,
+			"name": "Total gas 1"
+		},
+		{
+			"id": "521de23e6285ca98250924e4aa621214",
+			"area_id": null,
+			"name": "Total gas 2"
+		},
+		{
+			"id": "8dfb5b8dbbd24ff1ab38fb78ef961a6b",
+			"area_id": null,
+			"name": "Thermostat"
+		},
+		{
+			"id": "bcd2614f0e6e75117ce956f266b450e6",
+			"area_id": null,
+			"name": "Decorative Lights"
+		},
+		{
+			"id": "4b6660f98bb89ff85b1701ad3864f600",
+			"area_id": null,
+			"name": "AC"
+		},
+		{
+			"id": "e9a1b52ddc349cf7c1a5a41116eb2e92",
+			"area_id": null,
+			"name": "Text"
+		},
+		{
+			"id": "d81396b3fe96eb18b3d959bcfc52cf45",
+			"area_id": null,
+			"name": "Password"
+		},
+		{
+			"id": "b9878af1ce426a6b312d8ad19bb7ea63",
+			"area_id": null,
+			"name": "Text with 1 to 5 characters"
+		},
+		{
+			"id": "8192fcffeb4dfa4e8701fd1f63168203",
+			"area_id": null,
+			"name": "Text with only lower case characters"
+		},
+		{
+			"id": "c9c34eeed2faf3e246f0913733c85fcd",
+			"area_id": null,
+			"name": "Time"
+		},
+		{
+			"id": "5f79f4b3683a4e2e91206b1ffaad01f8",
+			"area_id": null,
+			"name": "Demo Update No Install"
+		},
+		{
+			"id": "d8b97b23a162061669c8ae1e256ccef2",
+			"area_id": null,
+			"name": "Demo No Update"
+		},
+		{
+			"id": "b131a4aebff10a479c5719573f889f27",
+			"area_id": null,
+			"name": "Demo add-on"
+		},
+		{
+			"id": "3fa0c60b37f786ece33d87170af426b9",
+			"area_id": null,
+			"name": "Demo Living Room Bulb Update"
+		},
+		{
+			"id": "1d2f102b537ef64f1efd553639644c5f",
+			"area_id": null,
+			"name": "Demo Update with Progress"
+		},
+		{
+			"id": "f19091bd7e637551497cde012f77fd52",
+			"area_id": null,
+			"name": "Demo Update with Decimal Progress"
+		},
+		{
+			"id": "1659ce4f50a504f5de4506cccf444bd9",
+			"area_id": null,
+			"name": "Demo vacuum 0 ground floor"
+		},
+		{
+			"id": "8a0f79f00464b759220427f4c759400d",
+			"area_id": null,
+			"name": "Demo vacuum 1 first floor"
+		},
+		{
+			"id": "da6736c1b16af3f985e89ecad63ef994",
+			"area_id": null,
+			"name": "Demo vacuum 2 second floor"
+		},
+		{
+			"id": "0306104f4206383908eb2002f9276281",
+			"area_id": null,
+			"name": "Demo vacuum 3 third floor"
+		},
+		{
+			"id": "650edb8e4cd5dc633bdf6240b8778e8e",
+			"area_id": null,
+			"name": "Demo vacuum 4 fourth floor"
+		},
+		{
+			"id": "9163b4f781ff1a135a9c4dfe24891b2d",
+			"area_id": null,
+			"name": "Front Garden"
+		},
+		{
+			"id": "409987cb6318b2f5a403b5e44ca67fa1",
+			"area_id": null,
+			"name": "Orchard"
+		},
+		{
+			"id": "310a2b9a2639576898af76051501f26c",
+			"area_id": null,
+			"name": "Back Garden"
+		},
+		{
+			"id": "3f07aae0cff156dd6cd6d595e17cec80",
+			"area_id": null,
+			"name": "Trees"
+		},
+		{
+			"id": "3a271a63ec7e4790db41fd5448f1cfc0",
+			"area_id": null,
+			"name": "Google Translate en com"
+		},
+		{
+			"id": "0967253e527e2846817611301080dba6",
+			"area_id": null,
+			"name": "Forecast"
+		},
+		{
+			"id": "57d5857cd9536af7d73419a2564aa514",
+			"area_id": null,
+			"name": "Backup"
+		}
+	],
+	"entities": [
+		{
+			"entity_id": "alarm_control_panel.security",
+			"device_id": null,
+			"area_id": null,
+			"name": null,
+			"original_name": "Security",
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "binary_sensor.basement_floor_wet",
+			"device_id": "1a0fa5dd2e5d56eacdb02175798606d3",
+			"area_id": "front_door",
+			"name": null,
+			"original_name": null,
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "binary_sensor.movement_backyard",
+			"device_id": "9e4f8ac20caee2a632ac9b5ed5067287",
+			"area_id": null,
+			"name": null,
+			"original_name": null,
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "binary_sensor.outside_temperature_battery_charging",
+			"device_id": "9c3040e9e46d44ea05d9685c8ea11b1f",
+			"area_id": null,
+			"name": null,
+			"original_name": "Battery Charging",
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "climate.heatpump",
+			"device_id": "0eeda399ea402ade26b45746e1b94cec",
+			"area_id": "living_room",
+			"name": null,
+			"original_name": null,
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "climate.hvac",
+			"device_id": "d58ef93343ad12e376ad70dfb9fc086c",
+			"area_id": "bedroom",
+			"name": null,
+			"original_name": null,
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "climate.ecobee",
+			"device_id": "050c87a2198c9f673bb072a9fbe0b0da",
+			"area_id": null,
+			"name": null,
+			"original_name": null,
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "cover.kitchen_window",
+			"device_id": "d8e01588a7cf3545cbffbed1d23291a8",
+			"area_id": "living_room",
+			"name": null,
+			"original_name": null,
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "cover.hall_window",
+			"device_id": "0b58bbf8dc60724486973cdc0148c01c",
+			"area_id": "kitchen",
+			"name": null,
+			"original_name": null,
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "cover.living_room_window",
+			"device_id": "c315f987169ebbc8a12f3da65482be8f",
+			"area_id": "front_door",
+			"name": null,
+			"original_name": null,
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "cover.garage_door",
+			"device_id": "96517d28b74d3e3ee4d77ea1e4111040",
+			"area_id": null,
+			"name": null,
+			"original_name": null,
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "cover.pergola_roof",
+			"device_id": "4d51867d262d517bca4cf232c412dd50",
+			"area_id": null,
+			"name": null,
+			"original_name": null,
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "fan.living_room_fan",
+			"device_id": null,
+			"area_id": "kitchen",
+			"name": null,
+			"original_name": "Living Room Fan",
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "fan.ceiling_fan",
+			"device_id": null,
+			"area_id": "bedroom",
+			"name": null,
+			"original_name": "Ceiling Fan",
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "fan.percentage_full_fan",
+			"device_id": null,
+			"area_id": null,
+			"name": null,
+			"original_name": "Percentage Full Fan",
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "fan.percentage_limited_fan",
+			"device_id": null,
+			"area_id": null,
+			"name": null,
+			"original_name": "Percentage Limited Fan",
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "fan.preset_only_limited_fan",
+			"device_id": null,
+			"area_id": null,
+			"name": null,
+			"original_name": "Preset Only Limited Fan",
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "light.bed_light",
+			"device_id": "99c96f383a5d97964320def1dcca33bc",
+			"area_id": "living_room",
+			"name": null,
+			"original_name": null,
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "light.ceiling_lights",
+			"device_id": "7503b224826d4f8e3cfcc7d239d2e119",
+			"area_id": "kitchen",
+			"name": null,
+			"original_name": null,
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "light.kitchen_lights",
+			"device_id": "96225237f1d35a76f53e487db62339ec",
+			"area_id": "bedroom",
+			"name": null,
+			"original_name": null,
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "light.office_rgbw_lights",
+			"device_id": "ead77abba06af18fb62256fb71ab895f",
+			"area_id": "front_door",
+			"name": null,
+			"original_name": null,
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "light.living_room_rgbww_lights",
+			"device_id": "b89d5308f4ccc3677f24c95f97615c9c",
+			"area_id": null,
+			"name": null,
+			"original_name": null,
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "light.entrance_color_white_lights",
+			"device_id": "f16deeb133aacb0decbcd8c6a7d3e46a",
+			"area_id": null,
+			"name": null,
+			"original_name": null,
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "sensor.outside_temperature",
+			"device_id": "9c3040e9e46d44ea05d9685c8ea11b1f",
+			"area_id": null,
+			"name": null,
+			"original_name": null,
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "sensor.outside_temperature_battery",
+			"device_id": "9c3040e9e46d44ea05d9685c8ea11b1f",
+			"area_id": null,
+			"name": null,
+			"original_name": "Battery",
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "switch.decorative_lights",
+			"device_id": "bcd2614f0e6e75117ce956f266b450e6",
+			"area_id": "living_room",
+			"name": null,
+			"original_name": null,
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "switch.ac",
+			"device_id": "4b6660f98bb89ff85b1701ad3864f600",
+			"area_id": null,
+			"name": null,
+			"original_name": null,
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "valve.front_garden",
+			"device_id": "9163b4f781ff1a135a9c4dfe24891b2d",
+			"area_id": null,
+			"name": null,
+			"original_name": null,
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "valve.orchard",
+			"device_id": "409987cb6318b2f5a403b5e44ca67fa1",
+			"area_id": null,
+			"name": null,
+			"original_name": null,
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "valve.back_garden",
+			"device_id": "310a2b9a2639576898af76051501f26c",
+			"area_id": null,
+			"name": null,
+			"original_name": null,
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "valve.trees",
+			"device_id": "3f07aae0cff156dd6cd6d595e17cec80",
+			"area_id": null,
+			"name": null,
+			"original_name": null,
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "scene.bedtime",
+			"device_id": null,
+			"area_id": null,
+			"name": null,
+			"original_name": "Bedtime",
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		},
+		{
+			"entity_id": "scene.away_mode",
+			"device_id": null,
+			"area_id": null,
+			"name": null,
+			"original_name": "Away Mode",
+			"original_device_class": null,
+			"disabled_by": null,
+			"hidden_by": null
+		}
+	],
+	"states": {
+		"alarm_control_panel.security": {
+			"entity_id": "alarm_control_panel.security",
+			"state": "disarmed",
+			"attributes": {
+				"code_format": "number",
+				"changed_by": null,
+				"code_arm_required": true,
+				"previous_state": null,
+				"next_state": null,
+				"friendly_name": "Security",
+				"supported_features": 63
+			}
+		},
+		"binary_sensor.basement_floor_wet": {
+			"entity_id": "binary_sensor.basement_floor_wet",
+			"state": "off",
+			"attributes": {
+				"device_class": "moisture",
+				"friendly_name": "Basement Floor Wet"
+			}
+		},
+		"binary_sensor.movement_backyard": {
+			"entity_id": "binary_sensor.movement_backyard",
+			"state": "on",
+			"attributes": {
+				"device_class": "motion",
+				"friendly_name": "Movement Backyard"
+			}
+		},
+		"binary_sensor.outside_temperature_battery_charging": {
+			"entity_id": "binary_sensor.outside_temperature_battery_charging",
+			"state": "off",
+			"attributes": {
+				"device_class": "battery_charging",
+				"friendly_name": "Outside Temperature Battery Charging"
+			}
+		},
+		"climate.heatpump": {
+			"entity_id": "climate.heatpump",
+			"state": "heat",
+			"attributes": {
+				"hvac_modes": [
+					"heat",
+					"off"
+				],
+				"min_temp": 7,
+				"max_temp": 35,
+				"current_temperature": 25,
+				"temperature": 20,
+				"hvac_action": "heating",
+				"friendly_name": "HeatPump",
+				"supported_features": 385
+			}
+		},
+		"climate.hvac": {
+			"entity_id": "climate.hvac",
+			"state": "cool",
+			"attributes": {
+				"hvac_modes": [
+					"off",
+					"heat",
+					"cool",
+					"auto",
+					"dry",
+					"fan_only"
+				],
+				"min_temp": 7,
+				"max_temp": 35,
+				"min_humidity": 30,
+				"max_humidity": 99,
+				"target_humidity_step": 5,
+				"fan_modes": [
+					"on_low",
+					"on_high",
+					"auto_low",
+					"auto_high",
+					"off"
+				],
+				"swing_modes": [
+					"auto",
+					"1",
+					"2",
+					"3",
+					"off"
+				],
+				"swing_horizontal_modes": [
+					"auto",
+					"rangefull",
+					"off"
+				],
+				"current_temperature": 22,
+				"temperature": 21,
+				"target_temp_high": null,
+				"target_temp_low": null,
+				"current_humidity": 54.2,
+				"humidity": 67.4,
+				"fan_mode": "on_high",
+				"hvac_action": "cooling",
+				"swing_mode": "off",
+				"swing_horizontal_mode": "auto",
+				"friendly_name": "Hvac",
+				"supported_features": 943
+			}
+		},
+		"climate.ecobee": {
+			"entity_id": "climate.ecobee",
+			"state": "heat_cool",
+			"attributes": {
+				"hvac_modes": [
+					"off",
+					"cool",
+					"heat_cool",
+					"auto",
+					"dry",
+					"fan_only"
+				],
+				"min_temp": 7,
+				"max_temp": 35,
+				"fan_modes": [
+					"on_low",
+					"on_high",
+					"auto_low",
+					"auto_high",
+					"off"
+				],
+				"preset_modes": [
+					"home",
+					"eco",
+					"away"
+				],
+				"swing_modes": [
+					"auto",
+					"1",
+					"2",
+					"3",
+					"off"
+				],
+				"current_temperature": 23,
+				"target_temp_high": 24,
+				"target_temp_low": 21,
+				"fan_mode": "auto_low",
+				"preset_mode": "home",
+				"swing_mode": "auto",
+				"friendly_name": "Ecobee",
+				"supported_features": 442
+			}
+		},
+		"cover.kitchen_window": {
+			"entity_id": "cover.kitchen_window",
+			"state": "closed",
+			"attributes": {
+				"is_closed": true,
+				"friendly_name": "Kitchen Window",
+				"supported_features": 11
+			}
+		},
+		"cover.hall_window": {
+			"entity_id": "cover.hall_window",
+			"state": "open",
+			"attributes": {
+				"is_closed": false,
+				"current_position": 10,
+				"friendly_name": "Hall Window",
+				"supported_features": 15
+			}
+		},
+		"cover.living_room_window": {
+			"entity_id": "cover.living_room_window",
+			"state": "open",
+			"attributes": {
+				"supported_speeds": [
+					"slow",
+					"default"
+				],
+				"is_closed": false,
+				"current_position": 70,
+				"current_tilt_position": 50,
+				"friendly_name": "Living Room Window",
+				"supported_features": 511
+			}
+		},
+		"cover.garage_door": {
+			"entity_id": "cover.garage_door",
+			"state": "closed",
+			"attributes": {
+				"is_closed": true,
+				"device_class": "garage",
+				"friendly_name": "Garage Door",
+				"supported_features": 3
+			}
+		},
+		"cover.pergola_roof": {
+			"entity_id": "cover.pergola_roof",
+			"state": "closed",
+			"attributes": {
+				"is_closed": true,
+				"current_tilt_position": 60,
+				"friendly_name": "Pergola Roof",
+				"supported_features": 240
+			}
+		},
+		"fan.living_room_fan": {
+			"entity_id": "fan.living_room_fan",
+			"state": "off",
+			"attributes": {
+				"preset_modes": [
+					"auto",
+					"smart",
+					"sleep",
+					"on"
+				],
+				"direction": "forward",
+				"oscillating": false,
+				"percentage": null,
+				"percentage_step": 33.333333333333336,
+				"preset_mode": null,
+				"friendly_name": "Living Room Fan",
+				"supported_features": 55
+			}
+		},
+		"fan.ceiling_fan": {
+			"entity_id": "fan.ceiling_fan",
+			"state": "off",
+			"attributes": {
+				"preset_modes": null,
+				"percentage": null,
+				"percentage_step": 33.333333333333336,
+				"preset_mode": null,
+				"friendly_name": "Ceiling Fan",
+				"supported_features": 49
+			}
+		},
+		"fan.percentage_full_fan": {
+			"entity_id": "fan.percentage_full_fan",
+			"state": "off",
+			"attributes": {
+				"preset_modes": [
+					"auto",
+					"smart",
+					"sleep",
+					"on"
+				],
+				"direction": "forward",
+				"oscillating": false,
+				"percentage": null,
+				"percentage_step": 33.333333333333336,
+				"preset_mode": null,
+				"friendly_name": "Percentage Full Fan",
+				"supported_features": 55
+			}
+		},
+		"fan.percentage_limited_fan": {
+			"entity_id": "fan.percentage_limited_fan",
+			"state": "off",
+			"attributes": {
+				"preset_modes": [
+					"auto",
+					"smart",
+					"sleep",
+					"on"
+				],
+				"percentage": null,
+				"percentage_step": 33.333333333333336,
+				"preset_mode": null,
+				"friendly_name": "Percentage Limited Fan",
+				"supported_features": 49
+			}
+		},
+		"fan.preset_only_limited_fan": {
+			"entity_id": "fan.preset_only_limited_fan",
+			"state": "off",
+			"attributes": {
+				"preset_modes": [
+					"auto",
+					"smart",
+					"sleep",
+					"on"
+				],
+				"preset_mode": null,
+				"friendly_name": "Preset Only Limited Fan",
+				"supported_features": 56
+			}
+		},
+		"light.bed_light": {
+			"entity_id": "light.bed_light",
+			"state": "off",
+			"attributes": {
+				"min_color_temp_kelvin": 2000,
+				"max_color_temp_kelvin": 6535,
+				"effect_list": [
+					"rainbow",
+					"off"
+				],
+				"supported_color_modes": [
+					"color_temp",
+					"hs"
+				],
+				"effect": null,
+				"color_mode": null,
+				"brightness": null,
+				"color_temp_kelvin": null,
+				"hs_color": null,
+				"rgb_color": null,
+				"xy_color": null,
+				"friendly_name": "Bed Light",
+				"supported_features": 4
+			}
+		},
+		"light.ceiling_lights": {
+			"entity_id": "light.ceiling_lights",
+			"state": "on",
+			"attributes": {
+				"min_color_temp_kelvin": 2000,
+				"max_color_temp_kelvin": 6535,
+				"supported_color_modes": [
+					"color_temp",
+					"hs"
+				],
+				"color_mode": "color_temp",
+				"brightness": 180,
+				"color_temp_kelvin": 2631,
+				"hs_color": [
+					28.55,
+					67.974
+				],
+				"rgb_color": [
+					255,
+					164,
+					82
+				],
+				"xy_color": [
+					0.532,
+					0.388
+				],
+				"friendly_name": "Ceiling Lights",
+				"supported_features": 0
+			}
+		},
+		"light.kitchen_lights": {
+			"entity_id": "light.kitchen_lights",
+			"state": "on",
+			"attributes": {
+				"min_color_temp_kelvin": 2000,
+				"max_color_temp_kelvin": 6535,
+				"supported_color_modes": [
+					"color_temp",
+					"hs"
+				],
+				"color_mode": "hs",
+				"brightness": 180,
+				"color_temp_kelvin": null,
+				"hs_color": [
+					345,
+					75
+				],
+				"rgb_color": [
+					255,
+					64,
+					112
+				],
+				"xy_color": [
+					0.588,
+					0.274
+				],
+				"friendly_name": "Kitchen Lights",
+				"supported_features": 0
+			}
+		},
+		"light.office_rgbw_lights": {
+			"entity_id": "light.office_rgbw_lights",
+			"state": "on",
+			"attributes": {
+				"supported_color_modes": [
+					"rgbw"
+				],
+				"color_mode": "rgbw",
+				"brightness": 180,
+				"hs_color": [
+					0,
+					49.804
+				],
+				"rgb_color": [
+					255,
+					128,
+					128
+				],
+				"xy_color": [
+					0.524,
+					0.313
+				],
+				"rgbw_color": [
+					255,
+					0,
+					0,
+					255
+				],
+				"friendly_name": "Office RGBW Lights",
+				"supported_features": 0
+			}
+		},
+		"light.living_room_rgbww_lights": {
+			"entity_id": "light.living_room_rgbww_lights",
+			"state": "on",
+			"attributes": {
+				"supported_color_modes": [
+					"rgbww"
+				],
+				"color_mode": "rgbww",
+				"brightness": 180,
+				"hs_color": [
+					0.923,
+					50.98
+				],
+				"rgb_color": [
+					255,
+					127,
+					125
+				],
+				"xy_color": [
+					0.528,
+					0.315
+				],
+				"rgbww_color": [
+					255,
+					0,
+					0,
+					255,
+					0
+				],
+				"friendly_name": "Living Room RGBWW Lights",
+				"supported_features": 0
+			}
+		},
+		"light.entrance_color_white_lights": {
+			"entity_id": "light.entrance_color_white_lights",
+			"state": "on",
+			"attributes": {
+				"supported_color_modes": [
+					"hs",
+					"white"
+				],
+				"color_mode": "hs",
+				"brightness": 180,
+				"hs_color": [
+					345,
+					75
+				],
+				"rgb_color": [
+					255,
+					64,
+					112
+				],
+				"xy_color": [
+					0.588,
+					0.274
+				],
+				"friendly_name": "Entrance Color + White Lights",
+				"supported_features": 0
+			}
+		},
+		"lock.front_door": {
+			"entity_id": "lock.front_door",
+			"state": "locked",
+			"attributes": {
+				"friendly_name": "Front Door",
+				"supported_features": 0
+			}
+		},
+		"lock.kitchen_door": {
+			"entity_id": "lock.kitchen_door",
+			"state": "unlocked",
+			"attributes": {
+				"friendly_name": "Kitchen Door",
+				"supported_features": 0
+			}
+		},
+		"lock.poorly_installed_door": {
+			"entity_id": "lock.poorly_installed_door",
+			"state": "unlocked",
+			"attributes": {
+				"friendly_name": "Poorly Installed Door",
+				"supported_features": 0
+			}
+		},
+		"lock.openable_lock": {
+			"entity_id": "lock.openable_lock",
+			"state": "locked",
+			"attributes": {
+				"friendly_name": "Openable Lock",
+				"supported_features": 1
+			}
+		},
+		"media_player.living_room": {
+			"entity_id": "media_player.living_room",
+			"state": "playing",
+			"attributes": {
+				"sound_mode_list": [
+					"Music",
+					"Movie"
+				],
+				"volume_level": 1,
+				"is_volume_muted": false,
+				"media_content_id": "eyU3bRy2x44",
+				"media_content_type": "movie",
+				"media_duration": 300,
+				"media_position": 45,
+				"media_position_updated_at": "2026-09-09T15:18:01.483812+00:00",
+				"media_title": "♥♥ The Best Fireplace Video (3 hours)",
+				"app_name": "YouTube",
+				"sound_mode": "Music",
+				"shuffle": false,
+				"entity_picture": "/api/media_player_proxy/media_player.living_room?token=646bb60fafbd669c5615851f0beb2e8daa5b8c92544e25491c1643ab3899ed60&cache=bc2ffb49c4f67034",
+				"friendly_name": "Living Room",
+				"supported_features": 119695
+			}
+		},
+		"media_player.bedroom": {
+			"entity_id": "media_player.bedroom",
+			"state": "playing",
+			"attributes": {
+				"sound_mode_list": [
+					"Music",
+					"Movie"
+				],
+				"volume_level": 1,
+				"is_volume_muted": false,
+				"media_content_id": "kxopViU98Xo",
+				"media_content_type": "movie",
+				"media_duration": 360000,
+				"media_position": 54000,
+				"media_position_updated_at": "2026-09-09T15:18:01.483829+00:00",
+				"media_title": "Epic sax guy 10 hours",
+				"app_name": "YouTube",
+				"sound_mode": "Music",
+				"shuffle": false,
+				"entity_picture": "/api/media_player_proxy/media_player.bedroom?token=37c8591fc66299814c145871080881db1c3937f79e355fd019eb62f36f5797c6&cache=e4513ed94ec89151",
+				"friendly_name": "Bedroom",
+				"supported_features": 119695
+			}
+		},
+		"media_player.walkman": {
+			"entity_id": "media_player.walkman",
+			"state": "playing",
+			"attributes": {
+				"sound_mode_list": [
+					"Music",
+					"Movie"
+				],
+				"group_members": [],
+				"volume_level": 1,
+				"is_volume_muted": false,
+				"media_content_id": "bounzz-1",
+				"media_content_type": "music",
+				"media_duration": 213,
+				"media_title": "I Wanna Be A Hippy (Flamman & Abraxas Radio Mix)",
+				"media_artist": "Technohead",
+				"media_album_name": "Bounzz",
+				"media_track": 1,
+				"sound_mode": "Music",
+				"shuffle": false,
+				"repeat": "off",
+				"entity_picture": "/api/media_player_proxy/media_player.walkman?token=347fa153db1d3df932b70e8113df33a53ca3d7661d678fb91b49484f3bc3a503&cache=62c0c516acbc53a9",
+				"friendly_name": "Walkman",
+				"supported_features": 914877
+			}
+		},
+		"media_player.kitchen": {
+			"entity_id": "media_player.kitchen",
+			"state": "playing",
+			"attributes": {
+				"sound_mode_list": [
+					"Music",
+					"Movie"
+				],
+				"group_members": [],
+				"volume_level": 1,
+				"is_volume_muted": false,
+				"media_content_id": "bounzz-1",
+				"media_content_type": "music",
+				"media_duration": 213,
+				"media_title": "I Wanna Be A Hippy (Flamman & Abraxas Radio Mix)",
+				"media_artist": "Technohead",
+				"media_album_name": "Bounzz",
+				"media_track": 1,
+				"sound_mode": "Music",
+				"shuffle": false,
+				"repeat": "off",
+				"entity_picture": "/api/media_player_proxy/media_player.kitchen?token=90fbe28e583c792ae38dc5ee6c19df173ec7a793e89c22646b6bd2907810db55&cache=62c0c516acbc53a9",
+				"friendly_name": "Kitchen",
+				"supported_features": 914877
+			}
+		},
+		"media_player.lounge_room": {
+			"entity_id": "media_player.lounge_room",
+			"state": "playing",
+			"attributes": {
+				"source_list": [
+					"dvd",
+					"youtube"
+				],
+				"sound_mode_list": [
+					"Music",
+					"Movie"
+				],
+				"volume_level": 1,
+				"is_volume_muted": false,
+				"media_content_id": "house-of-cards-1",
+				"media_content_type": "tvshow",
+				"media_duration": 3600,
+				"media_title": "Chapter 1",
+				"media_series_title": "House of Cards",
+				"media_season": "1",
+				"media_episode": "1",
+				"app_name": "Netflix",
+				"source": "dvd",
+				"sound_mode": "Music",
+				"shuffle": false,
+				"device_class": "tv",
+				"entity_picture": "/api/media_player_proxy/media_player.lounge_room?token=3177994f7c1158ff2081d4526f9dcae07f4f2d04a3610bdb1fdfabe21be80782&cache=cb9d84451faf9351",
+				"friendly_name": "Lounge room",
+				"supported_features": 121265
+			}
+		},
+		"media_player.browse": {
+			"entity_id": "media_player.browse",
+			"state": "playing",
+			"attributes": {
+				"volume_level": 1,
+				"is_volume_muted": false,
+				"sound_mode": "Music",
+				"shuffle": false,
+				"friendly_name": "Browse",
+				"supported_features": 4325376
+			}
+		},
+		"media_player.group": {
+			"entity_id": "media_player.group",
+			"state": "playing",
+			"attributes": {
+				"sound_mode_list": [
+					"Music",
+					"Movie"
+				],
+				"group_members": null,
+				"volume_level": 1,
+				"is_volume_muted": false,
+				"sound_mode": "Music",
+				"shuffle": false,
+				"friendly_name": "Group",
+				"supported_features": 643983
+			}
+		},
+		"media_player.search": {
+			"entity_id": "media_player.search",
+			"state": "playing",
+			"attributes": {
+				"volume_level": 1,
+				"is_volume_muted": false,
+				"sound_mode": "Music",
+				"shuffle": false,
+				"friendly_name": "Search",
+				"supported_features": 4194304
+			}
+		},
+		"sensor.outside_temperature": {
+			"entity_id": "sensor.outside_temperature",
+			"state": "15.6",
+			"attributes": {
+				"state_class": "measurement",
+				"unit_of_measurement": "°C",
+				"device_class": "temperature",
+				"friendly_name": "Outside Temperature"
+			}
+		},
+		"sensor.outside_temperature_battery": {
+			"entity_id": "sensor.outside_temperature_battery",
+			"state": "12",
+			"attributes": {
+				"state_class": "measurement",
+				"unit_of_measurement": "%",
+				"device_class": "battery",
+				"friendly_name": "Outside Temperature Battery"
+			}
+		},
+		"switch.decorative_lights": {
+			"entity_id": "switch.decorative_lights",
+			"state": "on",
+			"attributes": {
+				"assumed_state": true,
+				"friendly_name": "Decorative Lights"
+			}
+		},
+		"switch.ac": {
+			"entity_id": "switch.ac",
+			"state": "off",
+			"attributes": {
+				"device_class": "outlet",
+				"friendly_name": "AC"
+			}
+		},
+		"valve.front_garden": {
+			"entity_id": "valve.front_garden",
+			"state": "open",
+			"attributes": {
+				"is_closed": false,
+				"friendly_name": "Front Garden",
+				"supported_features": 3
+			}
+		},
+		"valve.orchard": {
+			"entity_id": "valve.orchard",
+			"state": "closed",
+			"attributes": {
+				"is_closed": true,
+				"friendly_name": "Orchard",
+				"supported_features": 3
+			}
+		},
+		"valve.back_garden": {
+			"entity_id": "valve.back_garden",
+			"state": "open",
+			"attributes": {
+				"is_closed": false,
+				"current_position": 70,
+				"friendly_name": "Back Garden",
+				"supported_features": 15
+			}
+		},
+		"valve.trees": {
+			"entity_id": "valve.trees",
+			"state": "open",
+			"attributes": {
+				"is_closed": false,
+				"current_position": 30,
+				"friendly_name": "Trees",
+				"supported_features": 15
+			}
+		},
+		"scene.bedtime": {
+			"entity_id": "scene.bedtime",
+			"state": "unknown",
+			"attributes": {
+				"entity_id": [
+					"light.bed_light",
+					"light.ceiling_lights",
+					"lock.front_door"
+				],
+				"id": "threews_bedtime",
+				"friendly_name": "Bedtime"
+			}
+		},
+		"scene.away_mode": {
+			"entity_id": "scene.away_mode",
+			"state": "unknown",
+			"attributes": {
+				"entity_id": [
+					"light.bed_light",
+					"light.ceiling_lights",
+					"light.kitchen_lights",
+					"light.office_rgbw_lights",
+					"light.living_room_rgbww_lights",
+					"light.entrance_color_white_lights",
+					"lock.front_door"
+				],
+				"id": "threews_away_mode",
+				"friendly_name": "Away Mode"
+			}
+		}
+	}
+}
